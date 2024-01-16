@@ -1,0 +1,32 @@
+version: "3"
+
+networks:
+  default:
+    internal: true
+  internal:
+    external: true
+  external:
+    external: True
+
+volumes:
+  libre_db:
+  libre_home:
+
+services:
+  libretranslate:
+    image: libretranslate/libretranslate:latest
+    networks:
+      - internal
+      - external
+    #ports:
+    #  - "5000:5000"
+    expose:
+      - "5000"
+    environment:
+      #- LT_DEBUG=True
+      - LT_FRONTEND_LANGUAGE_SOURCE=de
+      - LT_FRONTEND_LANGUAGE_TARGET=en
+      - LT_API_KEYS=True
+    volumes:
+      - libre_db:/app/db
+      - libre_home:/home/libretranslate
