@@ -1306,6 +1306,13 @@
       "description": "Commercial-grade Mosquitto MQTT broker with Management Center",
       "note": "Use <b>admin</b> as the default username to connect to the Management Center.",
       "stackfile": "https://raw.githubusercontent.com/portainer/templates/master/edge/cedalo-mosquitto-mc/docker-compose.yml"
+    },
+    {
+      "type": 4,
+      "title": "B-Tocs Service: LibreTranslate",
+      "description": "prepared container stack - see [original](https://libretranslate.com)",
+      "note": "The container required a internet connection to download the machine learning models at first start. Check the network traffic. After downloading 8GB the UI will be available",
+      "stackfile": "https://raw.githubusercontent.com/b-tocs/stacks/main/services/libretranslate/docker-compose.yml"
     }
   ]
 }
